@@ -19,7 +19,7 @@
   "description": "Industrial bearing exporter – new and used bearings from Gujarat, India",
   "url": "https://parasmanienterp.com",
   "address": {"@type":"PostalAddress","addressLocality":"Bhavnagar","addressRegion":"Gujarat","addressCountry":"IN"},
-  "telephone": "+919998999000",
+  "telephone": "+918460640113",
   "sameAs": []
 }</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -296,7 +296,7 @@ body.light-mode .why-num {
       </div>
     </div>
     <button class="nav-cta" onclick="toggleTheme()" id="themeToggleBtn" style="background:transparent;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;width:38px;height:38px;padding:0;border-radius:4px;cursor:pointer;"></button>
-    <a href="https://wa.me/919998999000?text=Hello+Parasmani+Enterprise%2C+bearing+inquiry" class="nav-cta" target="_blank">💬 WhatsApp</a>
+    <a href="https://wa.me/918460640113?text=Hello+Parasmani+Enterprise%2C+bearing+inquiry" class="nav-cta" target="_blank">💬 WhatsApp</a>
   </div>
   <button class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
 </nav>
@@ -380,11 +380,11 @@ body.light-mode .why-num {
         <h3>Parasmani Enterprise</h3>
         <p>Send us a model number, quantity, and destination — we'll provide pricing and shipping within hours via WhatsApp.</p>
         <div class="cdet"><span class="ico">📍</span><div><strong>Address</strong>Bhavnagar / Alang, Gujarat – 364001, India</div></div>
-        <div class="cdet"><span class="ico">📱</span><div><strong>WhatsApp</strong>+91 99989 99000</div></div>
+        <div class="cdet"><span class="ico">📱</span><div><strong>WhatsApp</strong>+91 84606 40113</div></div>
         <div class="cdet"><span class="ico">✉️</span><div><strong>Email</strong>inquiry@parasmanienterp.com</div></div>
         <div class="cdet"><span class="ico">🕐</span><div><strong>Response Time</strong>Within 2–4 hours on WhatsApp</div></div>
         <br>
-        <a href="https://wa.me/919998999000?text=Hello+Parasmani+Enterprise%2C+I+need+a+bearing+quote." class="btn-primary" target="_blank" style="display:inline-block;margin-top:10px">💬 WhatsApp Us Now</a>
+        <a href="https://wa.me/918460640113?text=Hello+Parasmani+Enterprise%2C+I+need+a+bearing+quote." class="btn-primary" target="_blank" style="display:inline-block;margin-top:10px">💬 WhatsApp Us Now</a>
       </div>
       <div class="cf">
         <label>Name / Company</label><input type="text" id="cf_name" placeholder="Your name or company">
@@ -468,7 +468,7 @@ body.light-mode .why-num {
 </div><!-- /view-detail -->
 
 <!-- WA FLOAT -->
-<a href="https://wa.me/919998999000?text=Hello+Parasmani+Enterprise%2C+bearing+inquiry" class="wa-float" target="_blank" title="WhatsApp">💬</a>
+<a href="https://wa.me/918460640113?text=Hello+Parasmani+Enterprise%2C+bearing+inquiry" class="wa-float" target="_blank" title="WhatsApp">💬</a>
 
 <script>
 // ── DATA ──
@@ -522,7 +522,7 @@ function handleGlobalSearch(val) {
   if (matches.length === 0) {
     dd.innerHTML = '<div style="padding:8px 12px;color:var(--silver);">No results found</div>';
   } else {
-    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onclick="location.hash='#/bearing/${b.id}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
+    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onclick="location.hash='#/bearing/${b.slug}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
   }
   dd.style.display = 'block';
 }
@@ -734,7 +734,7 @@ function renderBearGrid() {
           ${b.w_mm && b.w_mm!=='nan' ? `<span class="dim-chip">W: ${fmtNum(b.w_mm)}mm</span>` : ''}
         </div>
         <span class="cond-badge ${condCls}">${cond}</span>
-        <a class="bear-inq" href="https://wa.me/919998999000?text=${waMsg}" target="_blank">Inquire on WhatsApp</a>
+        <a class="bear-inq" href="https://wa.me/918460640113?text=${waMsg}" target="_blank">Inquire on WhatsApp</a>
       </div>
     `.replace('{condBadge}', `<span class="cond-badge ${condCls}" style="font-size:.68rem;padding:2px 7px">${cond}</span>`);
     card.querySelector('.bear-card-img').addEventListener('click', ()=>openDetail(b));
@@ -829,7 +829,7 @@ function openDetail(b) {
       </div>
       ${descLines.length ? `<div class="detail-desc"><ul>${descLines.map(l=>`<li>${l}</li>`).join('')}</ul></div>` : ''}
       <div class="detail-btns">
-        <a href="https://wa.me/919998999000?text=${waMsg}" target="_blank" class="btn-primary">💬 WhatsApp Inquiry</a>
+        <a href="https://wa.me/918460640113?text=${waMsg}" target="_blank" class="btn-primary">💬 WhatsApp Inquiry</a>
         <button class="btn-outline" onclick="openCategory('${b.type.replace(/'/g,"\\'")}')" style="cursor:pointer">← Back to ${typeLabel}</button>
       </div>
       <div class="schema-seo" aria-hidden="true">
@@ -861,7 +861,7 @@ function openDetail(b) {
               <h4>${rb.model||rb.name}</h4>
               <div class="brand">${rb.brand}</div>
               <span class="cond-badge ${rcls}">${rc}</span>
-              <a class="bear-inq" href="https://wa.me/919998999000?text=${rwa}" target="_blank" onclick="event.stopPropagation()">Inquire</a>
+              <a class="bear-inq" href="https://wa.me/918460640113?text=${rwa}" target="_blank" onclick="event.stopPropagation()">Inquire</a>
             </div>
           </div>`;
         }).join('')}
@@ -887,7 +887,7 @@ function submitForm() {
   const co = document.getElementById('cf_country').value;
   const ms = document.getElementById('cf_msg').value;
   const msg = encodeURIComponent(`*Parasmani Enterprise Inquiry*\nName: ${n}\nModel: ${m}\nQty: ${q}\nCondition: ${c}\nCountry: ${co}\nMessage: ${ms}`);
-  window.open(`https://wa.me/919998999000?text=${msg}`,'_blank');
+  window.open(`https://wa.me/918460640113?text=${msg}`,'_blank');
 }
 
 // ── INIT ──
