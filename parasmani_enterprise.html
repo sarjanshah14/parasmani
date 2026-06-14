@@ -897,11 +897,11 @@ function openDetail(b) {
   const related = BEARS.filter(rb => rb.type.trim()===b.type.trim() && rb.slug!==b.slug).slice(0,8);
   if(related.length) {
     document.getElementById('relatedSec').innerHTML = `
-      <div class="pad-x" style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div style="max-width:1200px;margin:0 auto">
         <div class="sec-label">More from this Category</div>
         <h2 class="sec-title" style="font-size:2rem">Related <em>Bearings</em></h2>
       </div>
-      <div class="related-grid pad-x" style="padding:0 40px;max-width:1280px;margin:24px auto 0">
+      <div class="related-grid" style="max-width:1280px;margin:24px auto 0">
         ${related.map(rb => {
           const rc = normCond(rb.cond);
           const rcls = rc==='NEW' ? 'cond-new' : 'cond-old';
