@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://parasmanienterp.com/sitemap.xml
+
+# Parasmani Enterprise - Industrial Bearing Exporters
+# Gujarat, India | SKF FAG NTN Timken NSK KOYO Nachi
