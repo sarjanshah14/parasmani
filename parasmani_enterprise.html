@@ -90,7 +90,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,27,42
 .home-cat-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2px}
 .home-cat-card{background:var(--navy);border:1px solid rgba(74,122,181,.15);cursor:pointer;transition:all .3s;position:relative;overflow:hidden;display:flex;flex-direction:column}
 .home-cat-card:hover{border-color:var(--gold);transform:translateY(-4px);box-shadow:0 12px 40px rgba(0,0,0,.4)}
-.home-cat-img{width:100%;height:180px;object-fit:cover;display:block;transition:transform .4s;background:var(--navy2)}
+.home-cat-img{width:100%;height:180px;object-fit:contain;padding:16px;display:block;transition:transform .4s;background:var(--navy2)}
 .home-cat-card:hover .home-cat-img{transform:scale(1.05)}
 .home-cat-body{padding:20px 20px 24px}
 .home-cat-count{position:absolute;top:14px;right:14px;background:rgba(13,27,42,.85);border:1px solid rgba(200,168,75,.5);color:var(--gold);font-family:var(--font-head);font-weight:700;font-size:.75rem;padding:3px 10px;letter-spacing:1px;backdrop-filter:blur(4px)}
@@ -156,7 +156,7 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
 .breadcrumb a{color:var(--steel);cursor:pointer}
 .breadcrumb a:hover{color:var(--gold)}
 .cat-hero-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:50px;flex-wrap:wrap}
-.cat-hero-img{width:260px;height:200px;object-fit:cover;background:rgba(255,255,255,.04);border:1px solid rgba(74,122,181,.2);flex-shrink:0}
+.cat-hero-img{width:260px;height:200px;object-fit:contain;padding:20px;background:rgba(255,255,255,.04);border:1px solid rgba(74,122,181,.2);flex-shrink:0}
 .cat-hero-text h1{font-family:var(--font-head);font-weight:800;font-size:clamp(2rem,4vw,3rem);text-transform:uppercase;letter-spacing:-1px;margin-bottom:12px}
 .cat-hero-text h1 em{color:var(--gold);font-style:normal}
 .cat-hero-text p{color:var(--silver);line-height:1.75;max-width:600px;font-weight:300}
@@ -174,7 +174,7 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
 .bearing-grid{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:2px}
 .bear-card{background:var(--navy);border:1px solid rgba(74,122,181,.15);cursor:pointer;transition:all .3s;overflow:hidden;position:relative}
 .bear-card:hover{border-color:var(--gold);transform:translateY(-3px);box-shadow:0 10px 30px rgba(0,0,0,.4)}
-.bear-card-img{width:100%;height:150px;object-fit:cover;background:var(--navy2);display:block;transition:transform .35s}
+.bear-card-img{width:100%;height:150px;object-fit:contain;padding:16px;background:var(--navy2);display:block;transition:transform .35s}
 .bear-card:hover .bear-card-img{transform:scale(1.08)}
 .bear-card-body{padding:16px 16px 18px}
 .bear-card-body h4{font-family:var(--font-head);font-weight:700;font-size:1rem;text-transform:uppercase;margin-bottom:4px;color:var(--white)}
@@ -198,7 +198,7 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
 .detail-hero{padding:60px 40px 50px;border-bottom:1px solid rgba(74,122,181,.2);max-width:1200px;margin:0 auto}
 .detail-inner{display:grid;grid-template-columns:420px 1fr;gap:60px;align-items:start}
 .detail-img-wrap{background:var(--navy2);border:1px solid rgba(74,122,181,.2);padding:30px;position:sticky;top:88px}
-.detail-img-wrap img{width:100%;height:320px;object-fit:cover;display:block}
+.detail-img-wrap img{width:100%;height:320px;object-fit:contain;display:block}
 .detail-brand-strip{display:flex;align-items:center;gap:10px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(74,122,181,.15)}
 .detail-brand-strip span{font-family:var(--font-head);font-weight:700;font-size:.82rem;letter-spacing:2px;text-transform:uppercase;color:var(--steel)}
 .detail-info h1{font-family:var(--font-head);font-weight:900;font-size:clamp(1.8rem,3.5vw,2.8rem);text-transform:uppercase;letter-spacing:-1px;margin-bottom:6px}
@@ -237,7 +237,8 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
   .nav-links{display:none}
   .hamburger{display:flex}
   .nav-links.open{display:flex;flex-direction:column;position:absolute;top:68px;left:0;width:100%;background:var(--navy2);padding:18px 24px;gap:18px;border-bottom:1px solid rgba(74,122,181,.3);z-index:999}
-  .sec,.bearing-list-sec,.cat-hero{padding-left:20px;padding-right:20px}
+  .sec,.bearing-list-sec,.cat-hero,.detail-hero,.related-sec,footer,.stats-strip{padding-left:20px;padding-right:20px}
+  .pad-x{padding-left:20px !important;padding-right:20px !important}
   .cat-hero-img{width:200px;height:160px}
   .wa-nav-btn { display: none !important; }
   #navGlobalSearch { width: 140px; }
@@ -247,16 +248,18 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
   .why-grid{grid-template-columns:1fr}
   .stats-strip{grid-template-columns:1fr 1fr}
   .home-cat-grid{grid-template-columns:1fr 1fr}
-  .home-cat-img{height:120px}
+  .home-cat-img{height:120px;padding:8px}
   .home-cat-body{padding:12px}
   .home-cat-body h3{font-size:0.9rem}
   .bearing-grid{grid-template-columns:1fr 1fr}
   .related-grid{grid-template-columns:1fr 1fr}
-  .bear-card-img{height:120px}
+  .bear-card-img{height:120px;padding:8px}
   .bear-card-body{padding:12px}
   .bear-card-body h4{font-size:0.85rem}
   .dims-grid{grid-template-columns:repeat(2,1fr)}
-  .related-sec{padding:30px 20px 60px}
+  .detail-dims{padding:16px}
+  .sec,.cat-hero,.detail-hero{padding-top:40px;padding-bottom:40px}
+  .bearing-list-sec,.related-sec{padding-top:30px;padding-bottom:50px}
   .nav-brand { display: none !important; }
   #navGlobalSearch { width: 120px; }
 }
@@ -504,7 +507,7 @@ body.light-mode .home-cat-body p {
 
 <!-- ════ DETAIL VIEW ════ -->
 <div class="view" id="view-detail">
-  <div style="max-width:1200px;margin:0 auto;padding:50px 40px 0">
+  <div class="pad-x" style="max-width:1200px;margin:0 auto;padding:50px 40px 0">
     <div class="breadcrumb" id="detailBread"></div>
     <div class="detail-inner" id="detailInner"></div>
   </div>
@@ -894,11 +897,11 @@ function openDetail(b) {
   const related = BEARS.filter(rb => rb.type.trim()===b.type.trim() && rb.slug!==b.slug).slice(0,8);
   if(related.length) {
     document.getElementById('relatedSec').innerHTML = `
-      <div style="max-width:1200px;margin:0 auto;padding:0 40px">
+      <div class="pad-x" style="max-width:1200px;margin:0 auto;padding:0 40px">
         <div class="sec-label">More from this Category</div>
         <h2 class="sec-title" style="font-size:2rem">Related <em>Bearings</em></h2>
       </div>
-      <div class="related-grid" style="padding:0 40px;max-width:1280px;margin:24px auto 0">
+      <div class="related-grid pad-x" style="padding:0 40px;max-width:1280px;margin:24px auto 0">
         ${related.map(rb => {
           const rc = normCond(rb.cond);
           const rcls = rc==='NEW' ? 'cond-new' : 'cond-old';
