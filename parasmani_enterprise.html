@@ -250,28 +250,63 @@ body.light-mode {
   --navy: #f4f7fb;
   --navy2: #ffffff;
   --white: #0d1b2a;
-  --silver: #4a5c6d;
+  --silver: #2a3a4a;
+  --gray: #4a5c6d;
+  --steel: #1c4e8f;
 }
 body.light-mode nav {
-  background: rgba(244, 247, 251, 0.96);
-  border-bottom: 1px solid rgba(28, 78, 143, 0.15);
+  background: rgba(244, 247, 251, 0.98);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
 body.light-mode .nav-cta {
   color: #0d1b2a;
 }
-body.light-mode .home-cat-card, body.light-mode .bear-card {
-  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-  border: 1px solid rgba(28, 78, 143, 0.1);
+body.light-mode .home-cat-card, body.light-mode .bear-card, body.light-mode .brand-item, body.light-mode .why-card, body.light-mode .stat-item, body.light-mode .cat-hero-img, body.light-mode .cf input, body.light-mode .cf textarea, body.light-mode .cf select, body.light-mode .bearing-search-box, body.light-mode .detail-dims, body.light-mode .dim-box {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  background: #ffffff !important;
+  color: var(--white);
+}
+body.light-mode .cf input::placeholder, body.light-mode .cf textarea::placeholder, body.light-mode .bearing-search-box::placeholder, body.light-mode #navGlobalSearch::placeholder {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+body.light-mode .stats-strip, body.light-mode .related-sec, body.light-mode .brand-sec {
+  border-top: 1px solid rgba(0, 0, 0, 0.15);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+body.light-mode .stats-strip {
+  background: #e8eef5;
 }
 body.light-mode #themeToggleBtn {
   color: var(--white) !important;
-  border-color: var(--white) !important;
+  border-color: rgba(0, 0, 0, 0.3) !important;
 }
 body.light-mode .hero-overlay {
   background: linear-gradient(135deg, rgba(244, 247, 251, 0.88) 40%, rgba(255, 255, 255, 0.4) 100%);
 }
 body.light-mode .why-num {
   color: rgba(0, 0, 0, 0.15);
+}
+body.light-mode #navSearchDropdown {
+  border: 1px solid rgba(0, 0, 0, 0.2) !important;
+  background: #ffffff !important;
+}
+body.light-mode #navGlobalSearch {
+  border: 1px solid rgba(0, 0, 0, 0.3) !important;
+  color: var(--white) !important;
+}
+body.light-mode .btn-outline {
+  color: var(--white);
+  border-color: rgba(0, 0, 0, 0.4);
+}
+body.light-mode .btn-outline:hover {
+  border-color: var(--white);
+}
+body.light-mode .detail-type-tag {
+  border-color: rgba(0, 0, 0, 0.3);
+  color: var(--white);
+}
+body.light-mode .home-cat-body p {
+  color: var(--silver);
 }
 </style>
 </head>
