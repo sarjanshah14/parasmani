@@ -516,7 +516,7 @@ body.light-mode .home-cat-body p {
 
 <!-- ════ DETAIL VIEW ════ -->
 <div class="view" id="view-detail">
-  <div class="pad-x" style="max-width:1200px;margin:0 auto;padding:50px 40px 0">
+  <div class="pad-x" style="max-width:1200px;margin:0 auto;padding:50px 40px 60px">
     <div class="breadcrumb" id="detailBread"></div>
     <div class="detail-inner" id="detailInner"></div>
   </div>
@@ -603,6 +603,7 @@ function showView(id) {
   document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
   document.getElementById(id).classList.add('active');
   window.scrollTo(0,0);
+  setTimeout(() => window.scrollTo(0,0), 10);
 }
 function showHome() {
   if (location.hash !== '' && location.hash !== '#') {
