@@ -930,7 +930,7 @@ function openDetail(b) {
           const rc = normCond(rb.cond);
           const rcls = rc==='NEW' ? 'cond-new' : 'cond-old';
           const rwa = encodeURIComponent(`Hello, I need a quote for: ${rb.model||rb.name} (${rb.brand})`);
-          return `<div class="bear-card" style="cursor:pointer" onclick="openDetail(${JSON.stringify(rb).replace(/</g,'\\u003c').replace(/>/g,'\\u003e')})">
+          return `<div class="bear-card" style="cursor:pointer" onclick="location.hash='#/bearing/${rb.slug}'">
             <img class="bear-card-img" src="${rb.imgUrl}" alt="${rb.model} bearing" loading="lazy" style="height:120px"
               onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><circle cx=%22100%22 cy=%2260%22 r=%2240%22 fill=%22none%22 stroke=%22%234a7ab5%22 stroke-width=%228%22/></svg>'">
             <div class="bear-card-body">
