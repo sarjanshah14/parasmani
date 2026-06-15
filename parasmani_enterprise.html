@@ -75,9 +75,9 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,27,42
 
 
 /* STATS */
-.stats-strip{background:var(--navy2);border-top:1px solid rgba(74,122,181,.3);border-bottom:1px solid rgba(74,122,181,.3);padding:26px 40px;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center}
-.stat-item h3{font-family:var(--font-head);font-weight:800;font-size:2.4rem;color:var(--gold)}
-.stat-item p{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin-top:4px}
+.stats-strip{background:var(--navy2);border-top:1px solid rgba(74,122,181,.3);border-bottom:1px solid rgba(74,122,181,.3);padding:40px 20px;margin: 20px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+.stat-item h3{font-family:var(--font-head);font-weight:800;font-size:clamp(1.5rem, 3vw, 2.4rem);color:var(--gold);line-height:1.2;margin-bottom:8px}
+.stat-item p{font-size:.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--gray);margin:0}
 
 /* CAT SECTION */
 .sec{padding:80px 40px}
@@ -103,7 +103,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,27,42
 .brands-track::before,.brands-track::after{content:'';position:absolute;top:0;z-index:2;width:120px;height:100%;pointer-events:none}
 .brands-track::before{left:0;background:linear-gradient(to right,var(--navy2),transparent)}
 .brands-track::after{right:0;background:linear-gradient(to left,var(--navy2),transparent)}
-.brands-row{display:flex;gap:0;animation:bscroll 28s linear infinite}
+.brands-row{display:flex;gap:0;animation:bscroll 14s linear infinite}
 .brand-item{background:rgba(255,255,255,.04);border:1px solid rgba(74,122,181,.15);padding:18px 38px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-family:var(--font-head);font-weight:800;font-size:1.3rem;letter-spacing:2px;color:var(--silver);min-width:150px}
 .brand-item:hover{color:var(--white);background:rgba(28,78,143,.2)}
 @keyframes bscroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
