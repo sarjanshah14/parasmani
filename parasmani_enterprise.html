@@ -15,15 +15,15 @@
 <meta property="og:type" content="website">
 <meta property="og:title" id="ogTitle" content="Parasmani Enterprise – Bearing Exporters India">
 <meta property="og:description" id="ogDesc" content="Export-grade industrial bearings – new and used. 1077+ models. Fast WhatsApp inquiry.">
-<meta property="og:image" content="https://parasmanienterp.com/logo.png">
+<meta property="og:image" content="https://parasmanienterprise.com/logo.png">
 <meta name="robots" content="index, follow">
-<link rel="canonical" id="canonical" href="https://parasmanienterp.com/">
+<link rel="canonical" id="canonical" href="https://parasmanienterprise.com/">
 <script type="application/ld+json" id="ldJson">{
   "@context": "https://schema.org",
   "@type": "Organization",
   "name": "Parasmani Enterprise",
   "description": "Industrial bearing exporter – new and used bearings from Gujarat, India",
-  "url": "https://parasmanienterp.com",
+  "url": "https://parasmanienterprise.com",
   "address": {"@type":"PostalAddress","addressLocality":"Bhavnagar","addressRegion":"Gujarat","addressCountry":"IN"},
   "telephone": "+918460640113",
   "sameAs": []
@@ -543,7 +543,7 @@ body.light-mode .home-cat-body p {
     <h1 class="hero-title" style="font-size: clamp(6rem, 15vw, 10rem); color: var(--gold); margin-bottom: 0;">404</h1>
     <h2 style="font-family: var(--font-head); font-weight: 800; font-size: clamp(2rem, 5vw, 3rem); text-transform: uppercase; color: var(--white); margin-bottom: 20px;">Page Not Found</h2>
     <p style="color: var(--silver); font-size: 1.1rem; margin-bottom: 40px; line-height: 1.6;">Sorry, the bearing or category you are looking for does not exist.<br>It might have been removed or the URL is incorrect.</p>
-    <button class="btn-primary" onclick="location.hash='#'">Back to Home</button>
+    <button class="btn-primary" onclick="navigateTo('/')">Back to Home</button>
   </div>
 </div>
 
@@ -602,7 +602,7 @@ function handleGlobalSearch(val) {
   if (matches.length === 0) {
     dd.innerHTML = '<div style="padding:8px 12px;color:var(--silver);">No results found</div>';
   } else {
-    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onmousedown="location.hash='#/bearing/${b.slug}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';" ontouchstart="location.hash='#/bearing/${b.slug}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
+    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onmousedown="navigateTo('/bearing/${b.slug}'); document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';" ontouchstart="navigateTo('/bearing/${b.slug}'); document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
   }
   dd.style.display = 'block';
 }
@@ -615,14 +615,14 @@ function showView(id) {
   setTimeout(() => window.scrollTo(0,0), 10);
 }
 function showHome() {
-  if (location.hash !== '' && location.hash !== '#') {
-    location.hash = '#';
+  if (location.pathname !== '/') {
+    navigateTo('/');
     return;
   }
   showView('view-home');
   updateMeta('Parasmani Enterprise – Industrial Bearing Exporters India',
     'Parasmani Enterprise – Leading exporter of new and used industrial bearings from Gujarat, India. SKF, FAG, NTN, Timken, NSK, KOYO.',
-    'https://parasmanienterp.com/');
+    'https://parasmanienterprise.com/');
 }
 
 // ── SCROLL HELPERS ──
@@ -749,7 +749,7 @@ function openCategory(type) {
   updateMeta(
     `${label} – Buy New & Used | Parasmani Enterprise`,
     `Parasmani Enterprise stocks ${bears.length} models of ${label.toLowerCase()}. New and used. Brands: ${brands.slice(0,5).join(', ')}. Export from Gujarat, India. WhatsApp inquiry.`,
-    `https://parasmanienterp.com/bearings/${type}`
+    `https://parasmanienterprise.com/bearings/${type}`
   );
 
   filteredBears = bears;
@@ -874,7 +874,7 @@ function openDetail(b) {
     "model": b.model,
     "sku": b.model || b.name,
     "image": b.imgUrl,
-    "offers":{"@type":"Offer","availability":"https://schema.org/InStock","seller":{"@type":"Organization","name":"Parasmani Enterprise"},"priceCurrency":"INR","price":"0","url":`https://parasmanienterp.com/bearing/${b.slug}`},
+    "offers":{"@type":"Offer","availability":"https://schema.org/InStock","seller":{"@type":"Organization","name":"Parasmani Enterprise"},"priceCurrency":"INR","price":"0","url":`https://parasmanienterprise.com/bearing/${b.slug}`},
     "additionalProperty":[
       {"@type":"PropertyValue","name":"Inner Diameter","value":`${b.id_mm} mm`},
       {"@type":"PropertyValue","name":"Outer Diameter","value":`${b.od_mm} mm`},
@@ -939,7 +939,7 @@ function openDetail(b) {
           const rc = normCond(rb.cond);
           const rcls = rc==='NEW' ? 'cond-new' : 'cond-old';
           const rwa = encodeURIComponent(`Hello, I need a quote for: ${rb.model||rb.name} (${rb.brand})`);
-          return `<div class="bear-card" style="cursor:pointer" onclick="location.hash='#/bearing/${rb.slug}'">
+          return `<div class="bear-card" style="cursor:pointer" onclick="navigateTo('/bearing/${rb.slug}')">
             <img class="bear-card-img" src="${rb.imgUrl}" alt="${rb.model} bearing" loading="lazy" style="height:120px"
               onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 200 120%22><circle cx=%22100%22 cy=%2260%22 r=%2240%22 fill=%22none%22 stroke=%22%234a7ab5%22 stroke-width=%228%22/></svg>'">
             <div class="bear-card-body">
@@ -957,7 +957,7 @@ function openDetail(b) {
   updateMeta(
     `${b.model||b.name} ${typeLabel} | Buy New & Used | Parasmani Enterprise`,
     `Buy ${b.model||b.name} ${typeLabel.toLowerCase()} bearing. Brand: ${b.brand}. ID: ${b.id_mm}mm, OD: ${b.od_mm}mm. Condition: ${cond}. Exporter from Gujarat, India. WhatsApp inquiry.`,
-    `https://parasmanienterp.com/bearing/${b.slug}`
+    `https://parasmanienterprise.com/bearing/${b.slug}`
   );
 
   showView('view-detail');
@@ -981,27 +981,40 @@ renderBrands();
 
 function show404() {
   showView('view-404');
-  updateMeta('404 Not Found | Parasmani Enterprise', 'The page you are looking for does not exist.', 'https://parasmanienterp.com/');
+  updateMeta('404 Not Found | Parasmani Enterprise', 'The page you are looking for does not exist.', 'https://parasmanienterprise.com/');
 }
 
-// ── URL HASH ROUTING (for SEO + bookmarks) ──
-function handleHash() {
-  const h = location.hash;
-  if(!h || h==='#') { showHome(); return; }
-  if(h.startsWith('#/bearing/')) {
-    const slug = decodeURIComponent(h.replace('#/bearing/',''));
+// ── HISTORY API ROUTING (Clean URLs) ──
+function navigateTo(path) {
+  if (location.pathname !== path) {
+    history.pushState(null, '', path);
+    handleRoute();
+  }
+}
+
+function handleRoute() {
+  const p = location.pathname;
+  if(!p || p==='/' || p==='/parasmani_enterprise.html') { showHome(); return; }
+  if(p.startsWith('/bearing/')) {
+    const slug = decodeURIComponent(p.replace('/bearing/',''));
     const b = BEARS.find(x => x.slug===slug);
     if(b) { openDetail(b); return; }
   }
-  if(h.startsWith('#/type/')) {
-    const type = decodeURIComponent(h.replace('#/type/',''));
+  if(p.startsWith('/type/')) {
+    const type = decodeURIComponent(p.replace('/type/',''));
     openCategory(type);
     return;
   }
   show404();
 }
-window.addEventListener('hashchange', handleHash);
-handleHash();
+window.addEventListener('popstate', handleRoute);
+
+// Handle legacy hash URLs gracefully for backward compatibility
+if (location.hash && location.hash.startsWith('#/')) {
+  navigateTo(location.hash.substring(1));
+} else {
+  handleRoute();
+}
 </script>
 </body>
 </html>
