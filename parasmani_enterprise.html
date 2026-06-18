@@ -337,7 +337,7 @@ body.light-mode .home-cat-body p {
 <!-- NAV -->
 <nav id="navbar">
   <div class="nav-logo" onclick="showHome()">
-    <img src="photos/paraslogo.jpeg" alt="Parasmani Enterprise Logo">
+    <img src="photos/paraslogo-removebg-preview.png" alt="Parasmani Enterprise Logo" title="Industrial and marine bearing exporter">
     <div class="nav-brand">PARASMANI <em>ENTERPRISE</em></div>
   </div>
   <ul class="nav-links" id="navLinks">
@@ -597,7 +597,7 @@ function handleGlobalSearch(val) {
   if (matches.length === 0) {
     dd.innerHTML = '<div style="padding:8px 12px;color:var(--silver);">No results found</div>';
   } else {
-    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onclick="location.hash='#/bearing/${b.slug}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
+    dd.innerHTML = matches.map(b => `<div style="padding:8px 12px;cursor:pointer;border-bottom:1px solid rgba(200,168,75,.1);" onmouseover="this.style.background='rgba(200,168,75,.1)'" onmouseout="this.style.background='transparent'" onmousedown="location.hash='#/bearing/${b.slug}'; document.getElementById('navGlobalSearch').value=''; document.getElementById('navSearchDropdown').style.display='none';">${b.name} <span style="font-size:0.8rem;color:var(--gold);">- ${b.brand}</span></div>`).join('');
   }
   dd.style.display = 'block';
 }
