@@ -678,7 +678,7 @@ BEARS.forEach(b => {
     else if(!base) { ext = "jpg"; base = "DP1"; }
     else { ext = "avif"; base = "tp1"; }
   }
-  b.imgUrl = `./photos/${base}.${ext}`;
+  b.imgUrl = `/photos/${base}.${ext}`;
 });
 
 // ── HOME CATEGORIES ──
@@ -720,9 +720,9 @@ function renderBrands() {
 
 // ── OPEN CATEGORY ──
 function openCategory(type) {
-  const targetHash = '#/type/' + encodeURIComponent(type.trim());
-  if (location.hash !== targetHash) {
-    location.hash = targetHash;
+  const targetPath = '/type/' + encodeURIComponent(type.trim());
+  if (location.pathname !== targetPath) {
+    navigateTo(targetPath);
     return;
   }
   type = type.trim();
@@ -753,7 +753,7 @@ function openCategory(type) {
   updateMeta(
     `${label} – Buy New & Used | Parasmani Enterprise`,
     `Parasmani Enterprise stocks ${bears.length} models of ${label.toLowerCase()}. New and used. Brands: ${brands.slice(0,5).join(', ')}. Export from Gujarat, India. WhatsApp inquiry.`,
-    `https://parasmanienterprise.com/bearings/${type}`
+    `https://parasmanienterprise.com/type/${type}`
   );
 
   filteredBears = bears;
@@ -850,9 +850,9 @@ function renderBearGrid() {
 
 // ── OPEN DETAIL ──
 function openDetail(b) {
-  const targetHash = '#/bearing/' + encodeURIComponent(b.slug);
-  if (location.hash !== targetHash) {
-    location.hash = targetHash;
+  const targetPath = '/bearing/' + encodeURIComponent(b.slug);
+  if (location.pathname !== targetPath) {
+    navigateTo(targetPath);
     return;
   }
   const cond = normCond(b.cond);
@@ -997,6 +997,7 @@ function navigateTo(path) {
 }
 
 function handleRoute() {
+  // If the URL somehow has a hash like /bearing/X#/bearing/X, strip it clean
   const p = location.pathname;
   if(!p || p==='/' || p==='/parasmani_enterprise.html') { showHome(); return; }
   if(p.startsWith('/bearing/')) {
@@ -1014,11 +1015,18 @@ function handleRoute() {
 window.addEventListener('popstate', handleRoute);
 
 // Handle legacy hash URLs gracefully for backward compatibility
-if (location.hash && location.hash.startsWith('#/')) {
-  navigateTo(location.hash.substring(1));
-} else {
-  handleRoute();
-}
+// e.g. /#/type/X or /bearing/X#/bearing/X
+(function() {
+  const h = location.hash;
+  if (h && h.startsWith('#/')) {
+    // Replace the current history entry with the clean path (no hash)
+    const cleanPath = h.substring(1); // strip leading #
+    history.replaceState(null, '', cleanPath);
+    handleRoute();
+  } else {
+    handleRoute();
+  }
+})();
 </script>
 </body>
 </html>
