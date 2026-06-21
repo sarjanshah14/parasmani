@@ -347,10 +347,10 @@ body .home-cat-body p {
     <div class="nav-brand">PARASMANI <em>ENTERPRISE</em></div>
   </div>
   <ul class="nav-links" id="navLinks">
-    <li><a href="javascript:void(0)" onclick="showHome(); document.getElementById('navLinks').classList.remove('open');">Home</a></li>
-    <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToCats, 100); document.getElementById('navLinks').classList.remove('open');">Products</a></li>
-    <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToBrands, 100); document.getElementById('navLinks').classList.remove('open');">Brands</a></li>
-    <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToContact, 100); document.getElementById('navLinks').classList.remove('open');">Contact</a></li>
+    <li><a href="/" onclick="event.preventDefault();showHome(); document.getElementById('navLinks').classList.remove('open');">Home</a></li>
+    <li><a href="/products" onclick="event.preventDefault();showHome(); setTimeout(scrollToCats, 100); document.getElementById('navLinks').classList.remove('open');">Products</a></li>
+    <li><a href="/brands" onclick="event.preventDefault();showHome(); setTimeout(scrollToBrands, 100); document.getElementById('navLinks').classList.remove('open');">Brands</a></li>
+    <li><a href="/contact" onclick="event.preventDefault();showHome(); setTimeout(scrollToContact, 100); document.getElementById('navLinks').classList.remove('open');">Contact</a></li>
   </ul>
   <div style="display:flex;gap:12px;align-items:center;">
     <div style="position:relative;">
@@ -479,10 +479,10 @@ body .home-cat-body p {
     <p>Industrial Bearing Exporters · Bhavnagar, Gujarat, India</p>
     <p style="font-size:.75rem;color:rgba(110,128,144,.5);margin-top:4px">Precision · Performance · Trust</p>
     <ul class="foot-links">
-      <li><a href="javascript:void(0)" onclick="showHome()">Home</a></li>
-      <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToCats, 100)">Products</a></li>
-      <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToBrands, 100)">Brands</a></li>
-      <li><a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToContact, 100)">Contact</a></li>
+      <li><a href="/" onclick="event.preventDefault();showHome()">Home</a></li>
+      <li><a href="/products" onclick="event.preventDefault();showHome(); setTimeout(scrollToCats, 100)">Products</a></li>
+      <li><a href="/brands" onclick="event.preventDefault();showHome(); setTimeout(scrollToBrands, 100)">Brands</a></li>
+      <li><a href="/contact" onclick="event.preventDefault();showHome(); setTimeout(scrollToContact, 100)">Contact</a></li>
     </ul>
     <p style="margin-top:24px;font-size:.72rem;color:rgba(110,128,144,.4)">© 2025 Parasmani Enterprise. All rights reserved. | Sitemap</p>
   </footer>
@@ -492,8 +492,8 @@ body .home-cat-body p {
 <div class="view" id="view-cat">
   <div class="cat-hero">
     <div class="breadcrumb">
-      <a href="javascript:void(0)" onclick="showHome()">Home</a> <span>›</span>
-      <a href="javascript:void(0)" onclick="showHome(); setTimeout(scrollToCats, 100)">Products</a> <span>›</span>
+      <a href="/" onclick="event.preventDefault();showHome()">Home</a> <span>›</span>
+      <a href="/products" onclick="event.preventDefault();showHome(); setTimeout(scrollToCats, 100)">Products</a> <span>›</span>
       <span id="catBreadName"></span>
     </div>
     <div class="cat-hero-inner">
@@ -837,8 +837,8 @@ function openDetail(b) {
   // Breadcrumb
   const typeLabel = (TYPE_META[b.type.trim()]||{}).label || b.type.replace(/-/g,' ');
   document.getElementById('detailBread').innerHTML = `
-    <a href="javascript:void(0)" onclick="showHome()">Home</a> <span>›</span>
-    <a href="javascript:void(0)" onclick="openCategory('${b.type.replace(/'/g,"\\'")}')">${typeLabel}</a> <span>›</span>
+    <a href="/" onclick="event.preventDefault();showHome()">Home</a> <span>›</span>
+    <a href="/type/${encodeURIComponent(b.type)}" onclick="event.preventDefault();openCategory('${b.type.replace(/'/g,"\\'")}')">${typeLabel}</a> <span>›</span>
     <span>${b.model||b.name}</span>
   `;
 
@@ -974,6 +974,9 @@ function handleRoute() {
   // If the URL somehow has a hash like /bearing/X#/bearing/X, strip it clean
   const p = location.pathname;
   if(!p || p==='/' || p==='/parasmani_enterprise.html') { showHome(); return; }
+  if(p==='/products') { showHome(); setTimeout(scrollToCats, 200); return; }
+  if(p==='/brands') { showHome(); setTimeout(scrollToBrands, 200); return; }
+  if(p==='/contact') { showHome(); setTimeout(scrollToContact, 200); return; }
   if(p.startsWith('/bearing/')) {
     const slug = decodeURIComponent(p.replace('/bearing/',''));
     const b = BEARS.find(x => x.slug===slug);
