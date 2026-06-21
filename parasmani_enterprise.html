@@ -32,8 +32,8 @@
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --navy:#0d1b2a;--navy2:#142233;--blue:#1c4e8f;--steel:#4a7ab5;
-  --silver:#b8c9d9;--gold:#c8a84b;--white:#f4f7fb;--gray:#6e8090;
+  --navy:#f4f7fb;--navy2:#ffffff;--blue:#1c4e8f;--steel:#1c4e8f;
+  --silver:#2a3a4a;--gold:#c8a84b;--white:#0d1b2a;--gray:#4a5c6d;
   --light:#e8eef5;--red:#c0392b;--green:#2e7d32;
   --font-head:'Barlow Condensed',sans-serif;
   --font-body:'Barlow',sans-serif;
@@ -270,7 +270,7 @@ footer p{color:var(--gray);font-size:.82rem;margin-bottom:6px}
   .nav-brand { display: none !important; }
   #navGlobalSearch { width: 120px; }
 }
-body.light-mode {
+body {
   --navy: #f4f7fb;
   --navy2: #ffffff;
   --white: #0d1b2a;
@@ -278,76 +278,67 @@ body.light-mode {
   --gray: #4a5c6d;
   --steel: #1c4e8f;
 }
-body.light-mode nav {
+body nav {
   background: rgba(244, 247, 251, 0.98);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-body.light-mode .nav-cta {
+body .nav-cta {
   color: #0d1b2a;
 }
-body.light-mode .nav-cta:hover {
+body .nav-cta:hover {
   color: #ffffff;
 }
-body.light-mode .home-cat-card, body.light-mode .bear-card, body.light-mode .brand-item, body.light-mode .why-card, body.light-mode .stat-item, body.light-mode .cat-hero-img, body.light-mode .cf input, body.light-mode .cf textarea, body.light-mode .cf select, body.light-mode .bearing-search-box, body.light-mode .detail-dims, body.light-mode .dim-box {
+body .home-cat-card, body .bear-card, body .brand-item, body .why-card, body .stat-item, body .cat-hero-img, body .cf input, body .cf textarea, body .cf select, body .bearing-search-box, body .detail-dims, body .dim-box {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   background: #ffffff !important;
   color: var(--white);
 }
-body.light-mode .cf input::placeholder, body.light-mode .cf textarea::placeholder, body.light-mode .bearing-search-box::placeholder, body.light-mode #navGlobalSearch::placeholder {
+body .cf input::placeholder, body .cf textarea::placeholder, body .bearing-search-box::placeholder, body #navGlobalSearch::placeholder {
   color: rgba(0, 0, 0, 0.5) !important;
 }
-body.light-mode .stats-strip, body.light-mode .related-sec, body.light-mode .brand-sec {
+body .stats-strip, body .related-sec, body .brand-sec {
   border-top: 1px solid rgba(0, 0, 0, 0.15);
   border-bottom: 1px solid rgba(0, 0, 0, 0.15);
 }
-body.light-mode .stats-strip {
+body .stats-strip {
   background: #e8eef5;
 }
-body.light-mode #themeToggleBtn {
+body #themeToggleBtn {
   color: var(--white) !important;
   border-color: rgba(0, 0, 0, 0.3) !important;
 }
-body.light-mode .hero-overlay {
+body .hero-overlay {
   background: linear-gradient(135deg, rgba(244, 247, 251, 0.88) 40%, rgba(255, 255, 255, 0.4) 100%);
 }
-body.light-mode .why-num {
+body .why-num {
   color: rgba(0, 0, 0, 0.15);
 }
-body.light-mode #navSearchDropdown {
+body #navSearchDropdown {
   border: 1px solid rgba(0, 0, 0, 0.2) !important;
   background: #ffffff !important;
 }
-body.light-mode #navGlobalSearch {
+body #navGlobalSearch {
   border: 1px solid rgba(0, 0, 0, 0.3) !important;
   color: var(--white) !important;
 }
-body.light-mode .btn-outline {
+body .btn-outline {
   color: var(--white);
   border-color: rgba(0, 0, 0, 0.4);
 }
-body.light-mode .btn-outline:hover {
+body .btn-outline:hover {
   border-color: var(--white);
 }
-body.light-mode .detail-type-tag {
+body .detail-type-tag {
   border-color: rgba(0, 0, 0, 0.3);
   color: var(--white);
 }
-body.light-mode .home-cat-body p {
+body .home-cat-body p {
   color: var(--silver);
 }
 </style>
 </head>
-<body class="light-mode">
-<script>
-  (function() {
-    var t = localStorage.getItem('theme');
-    if (t === 'dark') {
-      document.body.classList.remove('light-mode');
-    } else if (!t) {
-      localStorage.setItem('theme', 'light');
-    }
-  })();
-</script>
+<body>
+
 
 <!-- NAV -->
 <nav id="navbar">
@@ -367,7 +358,7 @@ body.light-mode .home-cat-body p {
       <div id="navSearchDropdown" style="display:none; position:absolute; top:100%; left:0; right:0; background:var(--navy); border:1px solid rgba(200,168,75,.3); border-top:none; max-height:300px; overflow-y:auto; z-index:1000; box-shadow:0 4px 15px rgba(0,0,0,0.3); border-radius:0 0 4px 4px;">
       </div>
     </div>
-    <button class="nav-cta" aria-label="Toggle Theme" onclick="toggleTheme()" id="themeToggleBtn" style="background:transparent;border:1px solid var(--gold);color:var(--gold);display:flex;align-items:center;justify-content:center;width:40px;height:40px;box-sizing:border-box;padding:0;border-radius:4px;cursor:pointer;"></button>
+    
     <a href="https://wa.me/918460640113?text=Hello+Parasmani+Enterprise%2C+bearing+inquiry" class="nav-cta wa-nav-btn" target="_blank">💬 WhatsApp</a>
   </div>
   <button class="hamburger" aria-label="Toggle Mobile Menu" onclick="document.getElementById('navLinks').classList.toggle('open')"><span></span><span></span><span></span></button>
@@ -576,28 +567,6 @@ let filteredBears = [];
 const PER_PAGE = 24;
 
 // ── THEME & SEARCH ──
-const iconSun = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>`;
-const iconMoon = `<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>`;
-
-function toggleTheme() {
-  document.body.classList.toggle('light-mode');
-  const btn = document.getElementById('themeToggleBtn');
-  if (document.body.classList.contains('light-mode')) {
-    if (btn) btn.innerHTML = iconMoon;
-    localStorage.setItem('theme', 'light');
-  } else {
-    if (btn) btn.innerHTML = iconSun;
-    localStorage.setItem('theme', 'dark');
-  }
-}
-
-if (localStorage.getItem('theme') === 'dark') {
-  const btn = document.getElementById('themeToggleBtn');
-  if (btn) btn.innerHTML = iconSun;
-} else {
-  const btn = document.getElementById('themeToggleBtn');
-  if (btn) btn.innerHTML = iconMoon;
-}
 
 function handleGlobalSearch(val) {
   const dd = document.getElementById('navSearchDropdown');
