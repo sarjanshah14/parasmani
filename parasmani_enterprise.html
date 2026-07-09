@@ -35,6 +35,7 @@
   "logo": "https://parasmanienterprise.com/photos/logo.jpg",
   "sameAs": ["https://www.instagram.com/parasmanienterprise","https://www.facebook.com/share/1BQLdCxeHp/","https://www.linkedin.com/company/parasmani-enterprise/"]
 }</script>
+<link rel="preload" as="image" href="/photos/hero-bg.jpg" fetchpriority="high">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300;400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap">
@@ -93,7 +94,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,27,42
 /* STATS */
 .stats-strip{background:var(--navy2);border-top:1px solid rgba(74,122,181,.3);border-bottom:1px solid rgba(74,122,181,.3);padding:40px 20px;margin: 20px 0;display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
 .stat-item{padding:24px 16px;border-radius:8px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:rgba(255,255,255,.03);border:1px solid rgba(74,122,181,.4)}
-.stat-item .stat-num{display:block;font-family:var(--font-head);font-weight:800;font-size:clamp(1.5rem, 3vw, 2.4rem);color:var(--gold);line-height:1.2;margin:0 0 8px 0}
+.stat-item .stat-num{display:block;font-family:var(--font-head);font-weight:800;font-size:clamp(1.5rem, 3vw, 2.4rem);color:var(--goldt);line-height:1.2;margin:0 0 8px 0}
 .stat-item p{font-size:.85rem;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--silver);margin:0}
 
 /* CAT SECTION */
@@ -130,7 +131,7 @@ nav{position:fixed;top:0;left:0;width:100%;z-index:1000;background:rgba(13,27,42
 .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;max-width:1100px;margin:44px auto 0}
 .why-card{background:var(--navy);border:1px solid rgba(74,122,181,.4);padding:36px 28px;transition:all .3s}
 .why-card:hover{border-color:rgba(200,168,75,.4)}
-.why-num{font-family:var(--font-head);font-weight:800;font-size:3.2rem;color:rgba(200,168,75,.18);line-height:1;margin-bottom:14px}
+.why-num{font-family:var(--font-head);font-weight:800;font-size:3.2rem;color:rgba(13,27,42,.6);line-height:1;margin-bottom:14px}
 .why-card h3{font-family:var(--font-head);font-weight:700;font-size:1.2rem;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}
 .why-card p{color:var(--gray);line-height:1.7;font-size:.87rem}
 
@@ -528,7 +529,7 @@ body .home-cat-body p {
   <footer>
     <div class="foot-logo"><img src="/photos/logo.jpg" alt=""><span>PARASMANI <em>ENTERPRISE</em></span></div>
     <p style="color:var(--gray);font-size:.8rem">Industrial Bearing Exporters · Gujarat, India</p>
-    <ul class="foot-links"><li><a href="javascript:void(0)" onclick="showHome()">Home</a></li><li><a href="javascript:void(0)" onclick="showHome();setTimeout(scrollToCats,300)">Products</a></li><li><a href="javascript:void(0)" onclick="showHome();setTimeout(scrollToContact,300)">Contact</a></li></ul>
+    <ul class="foot-links"><li><a href="/" onclick="event.preventDefault();showHome()">Home</a></li><li><a href="/products" onclick="event.preventDefault();showHome();setTimeout(scrollToCats,300)">Products</a></li><li><a href="/contact" onclick="event.preventDefault();showHome();setTimeout(scrollToContact,300)">Contact</a></li></ul>
   </footer>
 </div><!-- /view-cat -->
 
