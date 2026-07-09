@@ -1,0 +1,9 @@
+# Parasmani Enterprise
+
+> Industrial bearing exporter based in Bhavnagar/Alang, Gujarat, India. Stocks 1,088+ models of new and used bearings across 20 categories (spherical roller, deep groove ball, cylindrical roller, tapered roller, thrust and more) from brands including SKF, FAG, NTN, Timken, NSK, KOYO and Nachi. Worldwide export; inquiries via WhatsApp (+91 84606 40113) or sales.parasmanienterprise@gmail.com.
+
+## Catalog
+
+- [All categories](https://parasmanienterprise.com/): homepage listing every bearing category
+- [Sitemap](https://parasmanienterprise.com/sitemap.xml): all category and product URLs
+- Category pages live at /type/<Category-Name>, product pages at /bearing/<model-slug>

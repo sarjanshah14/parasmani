@@ -57,7 +57,7 @@ fs.mkdirSync(path.join(OUT, 'type'), { recursive: true });
 fs.mkdirSync(path.join(OUT, 'bearing'), { recursive: true });
 fs.writeFileSync(path.join(OUT, 'index.html'), shell);
 fs.writeFileSync(path.join(OUT, 'data.js'), bearsLine + '\n' + typeMetaLine + '\n');
-for (const f of ['photos', 'favicon', 'robots.txt', 'sitemap.xml']) fs.cpSync(f, path.join(OUT, f), { recursive: true });
+for (const f of ['photos', 'favicon', 'robots.txt', 'sitemap.xml', 'llms.txt']) fs.cpSync(f, path.join(OUT, f), { recursive: true });
 
 // type pages
 const types = [...new Set(BEARS.map(b => b.type.trim()).filter(Boolean))];

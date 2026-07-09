@@ -6,7 +6,7 @@
     { "source": "/type/:match*", "destination": "/" },
     { "source": "/bearing/:match*", "destination": "/" },
     { "source": "/bearings/:match*", "destination": "/" },
-    { "source": "/((?!photos|favicon|robots\\.txt|sitemap\\.xml|data\\.js).*)", "destination": "/" }
+    { "source": "/((?!photos|favicon|robots\\.txt|sitemap\\.xml|data\\.js|llms\\.txt).*)", "destination": "/" }
   ],
   "headers": [
     {
@@ -24,6 +24,12 @@
       "source": "/(photos|favicon)/(.*)",
       "headers": [
         { "key": "Cache-Control", "value": "public, max-age=604800, stale-while-revalidate=86400" }
+      ]
+    },
+    {
+      "source": "/data.js",
+      "headers": [
+        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=604800" }
       ]
     }
   ]
