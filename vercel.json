@@ -1,4 +1,7 @@
 {
+  "buildCommand": "node generate_pages.js",
+  "outputDirectory": "dist",
+  "cleanUrls": true,
   "rewrites": [
     { "source": "/", "destination": "/parasmani_enterprise.html" },
     { "source": "/type/:match*", "destination": "/parasmani_enterprise.html" },
