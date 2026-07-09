@@ -3,11 +3,10 @@
   "outputDirectory": "dist",
   "cleanUrls": true,
   "rewrites": [
-    { "source": "/", "destination": "/parasmani_enterprise.html" },
-    { "source": "/type/:match*", "destination": "/parasmani_enterprise.html" },
-    { "source": "/bearing/:match*", "destination": "/parasmani_enterprise.html" },
-    { "source": "/bearings/:match*", "destination": "/parasmani_enterprise.html" },
-    { "source": "/((?!photos|favicon|robots\\.txt|sitemap\\.xml).*)", "destination": "/parasmani_enterprise.html" }
+    { "source": "/type/:match*", "destination": "/" },
+    { "source": "/bearing/:match*", "destination": "/" },
+    { "source": "/bearings/:match*", "destination": "/" },
+    { "source": "/((?!photos|favicon|robots\\.txt|sitemap\\.xml|data\\.js).*)", "destination": "/" }
   ],
   "headers": [
     {

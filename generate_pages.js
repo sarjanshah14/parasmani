@@ -55,7 +55,7 @@ const OUT = 'dist';
 fs.rmSync(OUT, { recursive: true, force: true });
 fs.mkdirSync(path.join(OUT, 'type'), { recursive: true });
 fs.mkdirSync(path.join(OUT, 'bearing'), { recursive: true });
-fs.writeFileSync(path.join(OUT, 'parasmani_enterprise.html'), shell);
+fs.writeFileSync(path.join(OUT, 'index.html'), shell);
 fs.writeFileSync(path.join(OUT, 'data.js'), bearsLine + '\n' + typeMetaLine + '\n');
 for (const f of ['photos', 'favicon', 'robots.txt', 'sitemap.xml']) fs.cpSync(f, path.join(OUT, f), { recursive: true });
 
